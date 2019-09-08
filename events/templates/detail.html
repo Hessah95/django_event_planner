@@ -20,28 +20,23 @@
 </header>
 
 <div class="row m-5 pb-4">
-  {% for item in event %}
-    <div class="col-4">
   
-<div class="card" >
-  {% if item.image %}
-  <img src="{{ item.image.url }}" class="card-img-top">
+  {% if event.image %}
+  <img src="{{ event.image.url }}" class="card-img-top">
   {% endif %}
-  <div class="card-body">
-    <h5 class="card-title"> {{item.name_of_event}} </h5>
-  </div>
 
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{ item.date }} - {{item.Time}}</li>
-    <li class="list-group-item">{{ item.location }}</li>
-  </ul>
-  <div class="card-body">
-    <a href="{% url 'detail' item.id %}" class="card-link">View More ...</a>
-  </div>
+  <h1>Name of event: {{event.name_of_event}}</h1> 
+  <br>
+  <p>Description: {{event.description}}</p>
+  <br>
+  <p>Date and Time :</p>
+  <br>  
+  <p>{{ event.date }} - {{event.Time}}</p>
+  <br>
+  <p>Location: {{ event.location }}</p>
+  <br>
+  <p>Price: {{ event.price }}</p>
 
-</div> <!--end of card -->
-</div>  <!--end of col -->
-  {% endfor %}
 </div> <!--closing the row -->
 
 
